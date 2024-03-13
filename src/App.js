@@ -1,20 +1,24 @@
-import "./App.css";
+import { BrowserRouter } from "react-router-dom";
+import { Header } from "./components/header";
+import { RouteComp } from "./components/routes";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>React Webpack app</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="min-h-screen flex flex-col">
+        <Header />
+        <main className="flex-1 container mx-auto p-4">
+          <RouteComp />
+        </main>
+        <footer className="bg-gray-800 text-white py-4">
+          <div className="container mx-auto">
+            <p className="text-center">
+              React Webpack App &copy; {new Date().getFullYear()}
+            </p>
+          </div>
+        </footer>
+      </div>
+    </BrowserRouter>
   );
 }
 
