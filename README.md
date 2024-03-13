@@ -23,13 +23,21 @@ Creates a production build.
    `npm i -D @babel/core @babel/preset-env @babel/preset-react babel-loader`
 
 3. Install style loader, css loader and html webpack plugin.
-   `npm i -D style-loader css-loader html-webpack-plugin `\
+   `npm i -D style-loader css-loader html-webpack-plugin `
 
-4. Create `.babelrc` file.\
+4. Create `.babelrc` file.
 
 5. Create Webpack config files `webpack.dev.config.js` and `webpack.prod.config.js`.
 
 6. Update `package.json` scripts for start and build commands.
+
+## Webpack optimization
+
+1. Common `webpack.config.js` file. Use `webpack-merge` to merge common config with additional config.
+
+2. `BundleAnalyzerPlugin` - analyze module bundle size.
+
+3. `CleanWebpackPlugin` - clean build folder.
 
 ## Tailwind CSS setup steps
 
@@ -42,11 +50,3 @@ Creates a production build.
    `tailwind.config.js`
    `globals.css`
    `index.js` - import globals.css
-
-## Webpack optimization
-
-1. Common `webpack.config.js` file. Use `webpack-merge` to merge common config with additional config.\
-
-2. `BundleAnalyzerPlugin` - analyze module bundle size.\
-
-3. `CleanWebpackPlugin` - clean build folder.\
