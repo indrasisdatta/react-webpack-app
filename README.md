@@ -6,7 +6,7 @@ Simple app created using custom Webpack configuration. [React Webpack example](h
 
 ## Available Scripts
 
-### `npm run start`
+### `npm start`
 
 Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
@@ -42,3 +42,11 @@ Creates a production build.
    `tailwind.config.js`
    `globals.css`
    `index.js` - import globals.css
+
+## Webpack optimization
+
+1. Common `webpack.config.js` file. Use `webpack-merge` to merge common config with additional config.\
+
+2. `BundleAnalyzerPlugin` - analyze module bundle size.\
+
+3. `CleanWebpackPlugin` - clean build folder.\

@@ -43,7 +43,7 @@ const TodoList = () => {
 
   return (
     <div>
-      <h2>To do List</h2>
+      <h2 className="heading">To do List</h2>
       {todoData.loading && <p>Loading...</p>}
       {!todoData.loading && todoData.data?.todos?.length > 0 && (
         <ul>

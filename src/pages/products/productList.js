@@ -46,7 +46,7 @@ const ProductList = () => {
 
   return (
     <div>
-      <h2>Products List</h2>
+      <h2 className="heading">Products List</h2>
       {productData.loading && <p>Loading...</p>}
       {!productData.loading && productData.data?.products?.length > 0 && (
         <ul>
