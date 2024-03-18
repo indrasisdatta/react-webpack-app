@@ -6,7 +6,9 @@ export const Header = () => {
     <header className="bg-gray-800 text-white p-4">
       <div className="container mx-auto md:flex justify-between items-center">
         <div>
-          <h1 className="text-2xl font-bold">React Webpack Demo</h1>
+          <h1 className="text-2xl font-bold">
+            {process.env?.APP_NAME} {process.env?.APP_MODE}
+          </h1>
         </div>
         <nav className="space-x-4">
           <NavLink to={"/"} className="text-white hover:text-gray-300">

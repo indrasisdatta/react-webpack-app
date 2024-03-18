@@ -1,25 +1,20 @@
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
+const { ProvidePlugin } = require("webpack");
 
-module.exports = {
+module.exports.COMMON_PROCESS_ENV = {
+  APP_NAME: JSON.stringify("React Webpack App"),
+};
+
+module.exports.webpackConfig = {
   entry: "./src/index.js",
-  output: {
-    path: __dirname + "/build",
-    publicPath: "/",
-    filename: "bundle.js",
-  },
-  devServer: {
-    port: 3000,
-    static: ["./src", "./public"],
-    hot: true,
-    historyApiFallback: true,
-  },
   plugins: [
     new CleanWebpackPlugin(),
-    process.env.NODE_ENV !== "local" ? new BundleAnalyzerPlugin() : "",
     new HtmlWebpackPlugin({
       template: "public/index.html",
+    }),
+    new ProvidePlugin({
+      process: "process/browser",
     }),
   ],
   module: {

@@ -39,6 +39,32 @@ Creates a production build.
 
 3. `CleanWebpackPlugin` - clean build folder.
 
+## Webpack env based configuration
+
+1. Create env specific webpack files `webpack.dev.config.js`, `webpack.uat.config.js`, `webpack.prod.config.js`.
+
+2. In order to use `process.env` value in your code, run `npm i -D process`.
+
+3. Configure `plugins` section in `webpack.config.js` to use `process`.
+
+`plugins: [
+      /* other plugins */
+      new ProvidePlugin({
+         process: "process/browser",
+      }),
+   ],`
+
+4. Add env vars in `webpack.dev.config.js`
+
+   `plugins: [
+   new DefinePlugin({
+      "process.env": {
+      ...commonWebpack.COMMON_PROCESS_ENV,
+      APP_MODE: JSON.stringify("Local"),
+      },
+   }),
+],`
+
 ## Tailwind CSS setup steps
 
 1. Tailwind css dependencies\
