@@ -50,3 +50,30 @@ Creates a production build.
    `tailwind.config.js`
    `globals.css`
    `index.js` - import globals.css
+
+## React styling
+
+1. Prefer SCSS to CSS\
+
+   - Uses nested syntax\
+   - Code reusability using variables and mixins\
+
+2. CSS Modules\
+   Avoids class name conflicts by generating unique class names.\
+   `components/css_modules`\
+    `- common.module.scss`\
+    `- product.module.scss`
+
+   In Component `pages/products/productList.js`
+   `import commonStyles from "../../components/css_modules/common.module.scss";`
+   `import productStyles from "../../components/css_modules/product.module.scss";`
+
+   `<h2 className={commonStyles.heading}></h2>`
+   `<p className={productStyles.heading}></p>`
+
+3. Styled components\
+
+   - Generates unique class names for your styles\
+   - Simple dynamic styling based on props
+
+   `npm install styled-components`
