@@ -20,6 +20,12 @@ export const Header = () => {
           <NavLink to={"/to-do"} className="text-white hover:text-gray-300">
             To do list
           </NavLink>
+          <NavLink
+            to={"/to-do-redux"}
+            className="text-white hover:text-gray-300"
+          >
+            To do Redux
+          </NavLink>
         </nav>
       </div>
     </header>

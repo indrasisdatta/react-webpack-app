@@ -17,8 +17,20 @@ module.exports.webpackConfig = {
       process: "process/browser",
     }),
   ],
+  resolve: {
+    alias: {
+      "react/jsx-dev-runtime.js": "react/jsx-dev-runtime",
+      "react/jsx-runtime.js": "react/jsx-runtime",
+    },
+  },
   module: {
     rules: [
+      {
+        test: /\.m?js$/,
+        resolve: {
+          fullySpecified: false,
+        },
+      },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
