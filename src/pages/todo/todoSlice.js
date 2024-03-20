@@ -16,6 +16,7 @@ export const fetchTodos = createAsyncThunk("todos/fetchTodos", async () => {
   }
 });
 
+/* createSlice auto-generates action types and action creators, based on the names of reducer functions eg. addTodo */
 const todoSlice = createSlice({
   name: "todos",
   initialState,
@@ -24,14 +25,6 @@ const todoSlice = createSlice({
       const todoData = current(state.data);
       console.log("Action Payload", todoData, action.payload);
       state.data.todos.unshift(action.payload);
-      //   state.data.todos.push(action.payload);
-      //   return {
-      //     ...state,
-      //     data: {
-      //       ...state.data,
-      //       todos: [...state.data.todos, ...action.payload],
-      //     },
-      //   };
     },
   },
   extraReducers(builder) {
