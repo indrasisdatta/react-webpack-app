@@ -2,6 +2,7 @@ import React, { useEffect, useReducer } from "react";
 import commonStyles from "../../components/css_modules/common.module.scss";
 import productStyles from "../../components/css_modules/product.module.scss";
 import { Button } from "../../components/styled_components/Button";
+import { Loader } from "../../components/loader";
 Button;
 
 const defaultReducer = {
@@ -76,7 +77,11 @@ const ProductList = () => {
   return (
     <div>
       <h2 className={commonStyles.heading}>Products List</h2>
-      {productData.loading && <p>Loading...</p>}
+      {productData.loading && (
+        <div className="mt-3 flex justify-center items-center">
+          <Loader width="w-14" height="h-14" />
+        </div>
+      )}
       {!productData.loading && productData.data?.products?.length > 0 && (
         <>
           <p className={productStyles.heading}>

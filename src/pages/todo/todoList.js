@@ -1,4 +1,5 @@
 import React, { useEffect, useReducer } from "react";
+import { Loader } from "../../components/loader";
 
 const defaultReducer = {
   loading: true,
@@ -44,7 +45,11 @@ const TodoList = () => {
   return (
     <div>
       <h2 className="heading">To do List</h2>
-      {todoData.loading && <p>Loading...</p>}
+      {todoData.loading && (
+        <div className="mt-3 flex justify-center items-center">
+          <Loader width="w-14" height="h-14" />
+        </div>
+      )}
       {!todoData.loading && todoData.data?.todos?.length > 0 && (
         <ul>
           {todoData.data?.todos.map(({ id, todo }) => (

@@ -103,3 +103,5 @@ Creates a production build.
    - Simple dynamic styling based on props
 
    `npm install styled-components`
+
+https://www.freecodecamp.org/news/redux-and-redux-toolkit-for-beginners/
