@@ -6,15 +6,21 @@ const initialState = {
   error: null,
 };
 
-export const fetchTodos = createAsyncThunk("todos/fetchTodos", async () => {
-  try {
-    const resp = await fetch("https://dummyjson.com/todos");
-    const data = await resp.json();
-    return data;
-  } catch (e) {
-    return e;
+export const fetchTodos = createAsyncThunk(
+  "todos/fetchTodos",
+  async (params, thunkAPI) => {
+    try {
+      console.log("Async thunk", params, thunkAPI);
+      const resp = await fetch(
+        "https://dummyjson.com/todos?limit=" + params.limit
+      );
+      const data = await resp.json();
+      return data;
+    } catch (e) {
+      return e;
+    }
   }
-});
+);
 
 /* createSlice auto-generates action types and action creators, based on the names of reducer functions eg. addTodo */
 const todoSlice = createSlice({
